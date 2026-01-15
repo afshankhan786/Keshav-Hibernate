@@ -19,6 +19,17 @@ public class EmployeeRunner {
 		query.executeUpdate();
 	}
 
+	
+	public static void upxdateById(int id, Session session) {
+
+		MutationQuery mutationQuery = session.createMutationQuery("update empp set name=:n where id=:i");  
+		mutationQuery.setParameter("n","Ramu");  
+		mutationQuery.setParameter("i",2);  
+		System.out.println("status: "+mutationQuery.executeUpdate());  
+		
+	}
+	
+
 	public static void main(String[] args) {
 
 		Employee emp1 = new Employee("Avya", "FeMale", 64548, "IND");
